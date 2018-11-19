@@ -121,6 +121,10 @@ impl Pattern {
             .captures(text)
             .map(|cap| Matches::new(cap, &self.names))
     }
+
+    pub fn names(&self) -> Vec<&String> {
+        return self.names.keys().map(|k| k).collect()
+    }
 }
 
 /// The basic structure to manage patterns, entry point for common usage.
